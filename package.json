@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/ErdenioBrt/hub-de-leitura-teste-ui#readme",
   "dependencies": {
-    "cypress": "^15.19.0"
+    "cypress": "^15.21.0"
   }
 }
