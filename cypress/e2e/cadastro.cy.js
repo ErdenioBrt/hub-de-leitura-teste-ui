@@ -35,4 +35,17 @@ describe("Funcionalide: Cadastro no Hub de Leitura", () => {
         cy.url().should('include', 'dashboard')
         cy.get('#user-name').should('contain', nome)
     });
+
+    it.only('Deve fazer cadastro com sucesso, usando comando customizado', () => {
+        let email = `teste${Date.now()}@teste.com`
+        let nome = faker.person.fullName({sex: 'female'})
+        cy.preenncherCadastro(
+            nome,
+            email,
+            '11999999999',
+            'Teste@123',
+            'Teste@123',
+        )
+        cy.url().should('include', 'dashboard')
+    });
 });
