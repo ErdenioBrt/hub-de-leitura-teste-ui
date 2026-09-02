@@ -14,8 +14,8 @@ describe("Funcionalidade: Busca no catálogo", () => {
     });
 
     it.only('Deve fazer a busca de um livro do arquivo de massa de dados', () => {
-        cy.get('#search-input').type(catalogo[1].livro)
-        cy.get('.card-title').should('contain', catalogo[1].livro)
+        cy.get('#search-input').type(catalogo[2].livro)
+        cy.get('.card-title').should('contain', catalogo[2].livro)
     });
 
 
