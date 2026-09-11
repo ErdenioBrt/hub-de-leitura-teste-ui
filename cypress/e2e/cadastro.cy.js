@@ -9,7 +9,7 @@ describe("Funcionalide: Cadastro no Hub de Leitura", () => {
 
     });
 
-    AfterEach(() => {
+    afterEach(() => {
         cy.screenshot()
     });
 
