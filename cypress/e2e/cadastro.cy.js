@@ -9,6 +9,10 @@ describe("Funcionalide: Cadastro no Hub de Leitura", () => {
 
     });
 
+    AfterEach(() => {
+        cy.screenshot()
+    });
+
     it('Deve realizar o cadastro com sucesso, usando função JS', () => {
         let email = `teste${Date.now()}@teste.com`
         cy.get('#name').type('Maria')
@@ -18,7 +22,6 @@ describe("Funcionalide: Cadastro no Hub de Leitura", () => {
         cy.get('#confirm-password').type('senha123')
         cy.get('#terms-agreement').check()
         cy.get('#register-btn').click()
-        //resultado esperado do registro
         cy.url().should('include', 'dashboard')
     });
 
@@ -56,7 +59,7 @@ describe("Funcionalide: Cadastro no Hub de Leitura", () => {
         cy.url().should('include', 'dashboard')
     });
 
-    it.only('Deve validar mensagem ao tentar cadastrar sem preencher nome', () => {
+    it('Deve validar mensagem ao tentar cadastrar sem preencher nome', () => {
         cadastroPage.preencherCadastro('', 'mario@teste.com', '11999999999', 'senha123', 'senha123')
         cy.get(':nth-child(1) > .invalid-feedback').should('contain', 'Nome deve ter pelo menos 2 caracteres')
     });
