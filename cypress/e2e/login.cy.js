@@ -26,7 +26,7 @@ describe("Funcionalidade: Login no Hub de Leitura", () => {
     
     });
 
-    it.only('Deve fazer login com sucesso - Usando importação de massa de dados', () => {
+    it('Deve fazer login com sucesso - Usando importação de massa de dados', () => {
         cy.login(user.email, user.senha)
     });
 });

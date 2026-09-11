@@ -5,7 +5,7 @@ describe("Funcionalidade: Catálogo de livros", () => {
     cy.visit("catalog.html");
   });
 
-  it.skip("Deve clicar no botão Adicionar à cesta", () => {
+  it("Deve clicar no botão Adicionar à cesta", () => {
     cy.get(':nth-child(1) > .card > .card-body > .mt-auto > .d-grid > .btn-primary').click()
     cy.get('#cart-count').should('contain', '1')
 
